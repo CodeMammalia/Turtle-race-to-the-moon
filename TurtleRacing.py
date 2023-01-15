@@ -16,16 +16,12 @@ def printInput():
 	lbl.config(text = "Provided Input: "+inp)
 	
 	# TextBox Creation
-	inputtxt = tk.Text(frame,
-					height = 5,
-					width = 20)
+	inputtxt = tk.Text(frame, height = 5, width = 20)
   
 	inputtxt.pack()
 	
 	# Button Creation
-	printButton = tk.Button(frame,
-							text = "Enter", 
-							command = printInput)
+	printButton = tk.Button(frame, text = "Enter", command = printInput)
 	printButton.pack()
 	
 	# Label Creation
