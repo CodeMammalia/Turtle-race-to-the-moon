@@ -6,23 +6,24 @@ import random
 WIDTH, HEIGHT = 700, 600
 COLORS = ['red', 'green', 'blue', 'orange', 'maroon', 'black', 'purple', 'pink', 'brown', 'cyan']
 drawer = turtle.Turtle()
+cash = 200
 
 
 # How many racers will there be
 def get_number_of_racers():
-    racers = 0
+    racers = int(0)
     while True:
         racers = input('Enter the number of racers (2 - 10): ')
         if racers.isdigit():
             racers = int(racers)
         else:
-            print('Input is not numeric... Try Again!')
+            print('Give me a number you loser')
             continue
 
         if 2 <= racers <= 10:
             return racers
         else:
-            print('Number not in range 2-10. Try Again!')
+            print('A number between 2 and 10. Can you read?')
 
 
 # the race to be
@@ -67,6 +68,7 @@ def init_turtle():
 def finishline_drawn():
 
     drawer.hideturtle()
+    # drawer.hideturtle()
     drawer.penup()
 
     # go to left side end of screen
@@ -84,12 +86,11 @@ def finishline_drawn():
     drawer.pendown()
 
 
-def write_winner():
+def write_winner(winner):
     drawer.penup()
     drawer.goto(0, ((HEIGHT // 2) - 100) - 50)
     drawer.pendown()
     drawer.write(winner + " won!", align=tk.CENTER)
-    drawer.pendown()
 
 
 # racers = get_number_of_racers()
@@ -104,23 +105,32 @@ init_turtle()
 
 finishline_drawn()
 
-for i in range(3):
+print("Let's get ready to rumble. The contestants are as follows")
 
-    down = str(drawer.isdown())
+for x in range(racers):
+    print(str(COLORS[x]))
 
-    print(down)
+bet = input("Who will win?")
 
-    colors = COLORS[:racers]
+print("how much are you betting?")
 
-    # starts the race
-    winner = race(colors)
+bettingCash = input()
 
-    write_winner()
-
-    time.sleep(3)
-
-    racers.clear()
-
+if bettingCash.isdigit():
+    bettingCash = int(bettingCash)
 else:
+    print("A number you loser")
 
-    time.sleep(3)
+if bettingCash >= cash:
+    # do something
+else:
+    print("Bitch you and what money")
+
+colors = COLORS[:racers]
+
+# starts the race
+winner = race(colors)
+
+write_winner(winner)
+
+time.sleep(3)
