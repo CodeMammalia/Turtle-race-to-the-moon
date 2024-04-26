@@ -124,7 +124,7 @@ else:
 if bettingCash >= cash:
     # do something
 else:
-    print("Bitch you and what money")
+    print("You and what money")
 
 colors = COLORS[:racers]
 
