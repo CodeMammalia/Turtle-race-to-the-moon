@@ -58,7 +58,7 @@ def create_turtles(colors):
 
 
 # Setting up the window/Screen
-def init_turtle():
+def init_turtle_Scrn():
     screen = turtle.Screen()
     screen.setup(WIDTH, HEIGHT)
     screen.title('Turtle Racing!')
@@ -95,16 +95,19 @@ def write_winner(winner):
 
 # racers = get_number_of_racers()
 
-racers = 2
+# racers = 2
+
+racers = random.randrange(2, 10)
 
 # shuffle the color order to be different once
 random.shuffle(COLORS)
 
 # Creates window
-init_turtle()
+init_turtle_Scrn()
 
 finishline_drawn()
 
+"""
 print("Let's get ready to rumble. The contestants are as follows")
 
 for x in range(racers):
@@ -125,6 +128,7 @@ if bettingCash >= cash:
     # do something
 else:
     print("You and what money")
+"""
 
 colors = COLORS[:racers]
 
